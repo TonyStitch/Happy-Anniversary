@@ -149,6 +149,21 @@
     }
     @media (max-width:360px){
       .rose:nth-of-type(2), .rose:nth-of-type(3){display:none}
+
+      /* 💖 Stack heart photos vertically on tiny screens */
+      .heart-collage {
+        width: auto;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        transform: none;
+      }
+      .heart-collage img {
+        position: static;
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
