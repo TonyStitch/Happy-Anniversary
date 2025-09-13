@@ -9,7 +9,6 @@
     body{
       margin:0;
       font-family:Arial, sans-serif;
-      /* Sky blue and baby pink gradient background */
       background: linear-gradient(to bottom, #87CEEB, #FFC0CB);
       color:#333;
       text-align:center;
@@ -47,7 +46,6 @@
       color:#333;
     }
 
-    /* Heart-shaped collage with 10 photos */
     .heart-collage {
       position: relative;
       width: 400px;
@@ -57,7 +55,8 @@
     .heart-collage img {
       position: absolute;
       border-radius: 12px;
-     object-fit: contain; object-position: left,right;
+      object-fit: cover;
+      object-position: center;
       box-shadow: 0 3px 8px rgba(0,0,0,0.3);
     }
     .heart-collage .img1 { width: 120px; height: 120px; top: 0; left: 40px; }
@@ -71,7 +70,6 @@
     .heart-collage .img9 { width: 100px; height: 100px; bottom: 40px; right: 90px; }
     .heart-collage .img10 { width: 120px; height: 120px; bottom: 0; left: 140px; }
 
-    /* Envelope styles */
     .envelope {
       position: relative;
       width: 300px;
@@ -117,7 +115,6 @@
       transform: translateY(0);
     }
 
-    /* Floating enchanted rose animation */
     .rose {
       position:absolute;
       width:40px;
@@ -130,12 +127,34 @@
       0%{transform:translateY(100vh) rotate(0deg); opacity:1}
       100%{transform:translateY(-50px) rotate(360deg); opacity:0}
     }
+
+    /* ---------- RESPONSIVE ADJUSTMENTS ---------- */
+    .card{ max-width: min(92vw,700px); padding: clamp(16px, 3vw, 24px); }
+    .heart-collage{
+      width: 400px; height: 350px;
+      --targetW: min(90vw, 400px);
+      transform: scale(calc(var(--targetW) / 400));
+      transform-origin: top left;
+    }
+    .envelope{
+      width: clamp(240px, 80vw, 320px);
+      aspect-ratio: 3/2; height: auto;
+    }
+    .envelope .letter{ font-size: clamp(16px, 4vw, 20px); }
+    h1{ font-size: clamp(28px, 6vw, 42px); }
+    p{ font-size: clamp(15px, 2.8vw, 18px); }
+    @media (max-width:480px){
+      body{padding:14px}
+      .rose{width:28px; height:28px}
+    }
+    @media (max-width:360px){
+      .rose:nth-of-type(2), .rose:nth-of-type(3){display:none}
+    }
   </style>
 </head>
 <body>
   <h1>🌹 Happy 7 Months Anniversary!❤️ 🌹</h1>
 
-  <!-- Floating enchanted roses -->
   <div class="rose" style="left:10%"></div>
   <div class="rose" style="left:50%; animation-delay:2s"></div>
   <div class="rose" style="left:80%; animation-delay:4s"></div>
@@ -148,7 +167,6 @@
       Like Belle found her Beast, I found my happiness in you. Every moment with you is magical and fills my heart with joy.  
     </p>
 
-    <!-- Heart collage with 10 photos -->
     <div class="heart-collage">
       <img src="Aonny 2.jpg" class="img1">
       <img src="Me.jpg" class="img2">
@@ -159,7 +177,7 @@
       <img src="Aonny 4.jpg" class="img7">
       <img src="Staring her face.jpg" class="img8">
       <img src="Aonny 5.jpg" class="img9">
-     <img src="holding hands.jpg" class="img10">
+      <img src="holding hands.jpg" class="img10">
     </div>
 
     <h2>Open Your Love Letter 💌</h2>
